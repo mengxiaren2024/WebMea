@@ -1,0 +1,44 @@
+{
+  "name": "CSP-new-sql6.0-crawl-1",
+  "description": "Override a website's CSP and report to CSP generator",
+  "version": "1.0.0",
+  "author": "Marc Wickenden",
+  "homepage_url": "https://github.com/4ARMED/csp-generator-extension",
+  "manifest_version": 2,
+  "permissions": [
+    "webRequest",
+    "debugger",
+    "webRequestBlocking",
+    "<all_urls>",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "tabs",
+    "activeTab",
+    "pageCapture",
+    "browsingData",
+    "downloads"
+  ],
+  "background": {
+    "scripts": [ "js/jquery-3.1.1.min.js", "js/common.js", "js/background.js" ],
+    "persistent": true
+  },
+  
+  "web_accessible_resources": [
+    "urls.txt"
+],
+  "browser_action": {
+      "default_title": "Generate CSP for this site",
+      "default_icon": "images/popup-off.png",
+      "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
